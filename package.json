@@ -1,0 +1,65 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "adb-installer",
+  "title": "ADB Installer",
+  "description": "Uses Android Debug Bridge to install & manage apps on your device.",
+  "icon": "extension-icon.png",
+  "author": "Gallardo994",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "adb-install",
+      "title": "adb install",
+      "subtitle": "Install currently selected .apk file",
+      "description": "Install currently selected .apk file",
+      "mode": "no-view"
+    },
+    {
+      "name": "adb-kill-server",
+      "title": "adb kill-server",
+      "subtitle": "Kill ADB server",
+      "description": "Kill ADB server",
+      "mode": "no-view"
+    },
+    {
+      "name": "adb-devices",
+      "title": "adb devices",
+      "subtitle": "List connected devices",
+      "description": "List connected devices",
+      "mode": "no-view"
+    }
+  ],
+  "preferences": [
+    {
+      "title": "ADB Path",
+      "name": "adbPath",
+      "description": "Location of the ADB executable",
+      "type": "textfield",
+      "required": true,
+      "default": "/opt/homebrew/bin/adb"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.101.1",
+    "@raycast/utils": "^1.17.0",
+    "expand-tilde": "^2.0.2"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/expand-tilde": "^2.0.2",
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.10",
+    "adbkit-apkreader": "^3.2.0",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
